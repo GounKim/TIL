@@ -11,3 +11,5 @@ Day4
 
 [Day5](https://github.com/GounKim/TIL/blob/master/JAVA/Day5(2021_12_27).md)
 
+Day6
+
