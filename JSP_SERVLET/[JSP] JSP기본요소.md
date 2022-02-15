@@ -28,7 +28,7 @@
         동작 메커니즘 (main.jsp에서 header.jsp를 include할 때)
         - 소스코드 내용 전체를 포함시켜 동작함<br>
         &nbsp;&nbsp;&nbsp;&nbsp;-> 포함하고 있는 .jsp페이지(main)만 서블릿으로 변환된다.
-            ![](img/SmartSelectImage_2022-02-14-16-57-16.png)
+            ![](img/include지시어_정적방법.png))
 
     - #### 동적(dynamic) 방법(include 액션 태그 사용)
         ```jsp
@@ -40,7 +40,7 @@
         요청을 받은 header.jsp가 실행된 결과가 main.jsp의 소스코드 내용으로 포함되어 동작한다.<br>
         &nbsp;&nbsp;&nbsp;&nbsp;-> 즉, 포함하고 있는 패이지와 포함 된 페이지 모두 서블릿으로 변한다.
         - flush: 버퍼의 동작방식 지정<br>-> **true**: 버퍼가 모두 채워지지 않더라도 응답처리됨, 기본으로 사용한다.)
-            ![](img/SmartSelectImage_2022-02-14-17-19-27.png)
+            ![](img/include지시어_동적방법.png)
     <br><br>
 
 3. ### taglib 지시어
