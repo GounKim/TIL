@@ -1,13 +1,15 @@
 ## 내용
 ### 요청 위임
-### 1. [](#)
-### 2. [](#)
+### Ⅰ. [위임을 하는 이유](#reason)
+### Ⅱ. 위임 방법
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1. 포워드(forward)](#forward)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2. 리다이렉트(redirect)](#redirect)
 
 <br><br>
 
 # 요청 위임
 
-## Ⅰ. 위임을 하는 이유
+<h2 id="reason">Ⅰ. 위임을 하는 이유</h2>
 
     서블릿: 자바코드(비즈니스 로직) 최적화, 뷰 처리↓<br>
     jsp: 뷰 처리 최적화, 자바 코드↓<br>
@@ -20,7 +22,7 @@
 
 ## Ⅱ. 위임 방법 (2가지)
 
-### 1. 포워드(forward)
+<h3 id = "forward"> 1. 포워드(forward)<h3>
 - HttpServletRequest이용
     ```java
     request.getRequestDispatcher("타겟.jsp").forward(request, response);
@@ -35,7 +37,7 @@
 
 <br>
 
-### 2. 리다이렉트(redirect)
+<h3 id="redirect"> 2. 리다이렉트(redirect)<h3>
 - HttpServletResponse 이용
   ```java
     response.sendRedirect("타겟.jsp");
