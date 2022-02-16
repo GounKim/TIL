@@ -1,13 +1,16 @@
 # JSP 기본요소
+
 ## 내용
-### 1. [JSP 스크립팅 요소](#tag)
-### 2. [JSP 내장객체 (내장변수)](#inner)
+### Ⅰ. JSP 기본 요소
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ⅰ. [JSP 스크립팅 요소](#tag)
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[a. JSP표준 액션태그 요소](#actionTag)
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ⅱ. [JSP 내장객체 (내장변수)](#inner)
 
 <br><br>
 
-<h1 id="tag"> 1. JSP 스크립팅 요소</h1>
+<h2 id="tag"> Ⅰ. JSP 스크립팅 요소</h1>
 
-## 1. directive 태그
+### 1. directive 태그
 1. ### page 지시어
    jsp페이지에서 설정 가능한 속성을 지시
     ```jsp
@@ -28,9 +31,12 @@
         동작 메커니즘 (main.jsp에서 header.jsp를 include할 때)
         - 소스코드 내용 전체를 포함시켜 동작함<br>
         &nbsp;&nbsp;&nbsp;&nbsp;-> 포함하고 있는 .jsp페이지(main)만 서블릿으로 변환된다.
-            ![](img/include지시어_정적방법.png))
+            ![](img/include지시어_정적방법.png)
+        
+        <br>
 
-    - #### 동적(dynamic) 방법(include 액션 태그 사용)
+    - <h4 id="actionTag"> 동적(dynamic) 방법<b>(a. include 액션 태그 사용)</b></h4>
+  
         ```jsp
         <jsp:include page="포함할 파일명" flush="true" />
         <jsp:include page="포함할 파일명"></jsp:include>
@@ -51,7 +57,7 @@
 <br>
 <br>
 
-## 2. declaration 태그 (거의 사용X)
+### 2. declaration 태그 (거의 사용X)
 ```jsp
 <%!
     /* 자바 선언문 */
@@ -61,7 +67,7 @@
 ```
 <br>
 
-## 3 **_scriptlet 태그_** (주로 사용)
+### 3 **_scriptlet 태그_** (주로 사용)
 ```jsp
 <%
     /* 자바 코드 */
@@ -71,14 +77,14 @@
 ```
 <br>
 
-## 4. expression 태그
+### 4. expression 태그
 ```jsp
 <%= /*브라우저에 출력할 변수(자바 표현식)*/ %>
 ```
 
 <br>
 
-## 4. comment 태그
+### 4. comment 태그
 ```jsp
 <%-- JSP 주석 태그 --%>
 <%
@@ -91,7 +97,7 @@
 
 <br><br>
 
-<h1 id="inner"> 2. 내장객체(내장변수)</h1>
+<h2 id="inner"> b. 내장객체(내장변수)</h1>
 jsp에서 선언없이 사용 가능한 변수 (내부적으로 자동으로 선언됨)
 
 - request: HttpServletRequest
