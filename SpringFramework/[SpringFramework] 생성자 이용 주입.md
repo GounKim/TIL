@@ -1,21 +1,23 @@
 # DI (Dependency Injection)
+###### https://docs.spring.io/spring-framework/docs/4.3.30.RELEASE/spring-framework-reference/html/beans.html#beans-constructor-injection
 
-## 생성자 이용 주입 (Constructor-based Injection)
- 
+## 생성자 이용 주입 (Constructor-based dependency injection)
+
 - ### 빈(Bean) 생성
   패키지 위치:<br>&nbsp;&nbsp;
     src/main/java<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        └ com/dto/Person.java
+        └ com/dto/Person.java<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        └ com/dto/Cat.java<br>
+  ***생성자 주입 필요***
     ```java
         public class Person {
             private String name;    // null => 외부에서 문자열을 주입
             private int age; 		// 0	=> 외부에서 값을 주입
             private Cat cat;
 
-            // 기본 생성자
+            // 생성자 주입
             public Person() { }
 
-            // 생성자 주입
             public Person(String n) {
                 name = n;
             }
@@ -39,15 +41,26 @@
                 return age;
             }
 
-            public Cat getCat() {
-                return cat;
-            }   
-
             @Override
             public String toString() {
                 return "Person [name=" + name + ", age=" + age + ", cat=" + cat + "]";
             }
         }
+    ```
+    ```java
+    public class Cat {
+        private String name;
+	
+	
+        public Cat(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return "Cat [name=" + name + "]";
+        }
+}
     ```
 
 - ### 빈(Bean) 등록 : Spring Bean Configuration File 이용
@@ -71,15 +84,19 @@
             value: 문자열|기본형
             ref: 참조형
         -->
-        <constructor-arg name="m" value="이름" />
+        <constructor-arg name="n" value="이름" />
 	</bean>
 
     <bean id = "person3" class="com.dto.Person">
-        <constructor-arg name="m" value="이순신" />
-        <constructor-arg name="n" value="44" />
+        <constructor-arg name="n" value="이순신" />
+        <constructor-arg name="a" value="44" />
 	</bean>
 
     <!-- 다른 Bean 포함하는 생성자 주입-->
+    <!-- 
+        Cat cat = new Cat();
+        Person person = new Person(cat); 와 동일
+    -->
     <bean id="cat" class="com.dto.Cat">
         <constructor-arg name="name" value="나비" />
     </bean>
