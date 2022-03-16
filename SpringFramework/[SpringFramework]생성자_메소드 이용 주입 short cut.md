@@ -3,6 +3,8 @@
 1. [생성자 이용 주입 SHORT CUT](#생성자-이용-주입-short-cut)
 2. [메소드 이용 주입 SHORT CUT](#메소드-이용-주입-short-cut)
 
+<br><br>
+
 ## 생성자 이용 주입 SHORT CUT
 1. [Person/Cat 빈(bean) 생성]([SpringFramework]%20생성자%20이용%20주입.md)
 2. ### p-namespace 삽입
@@ -33,9 +35,9 @@
 
       Person person = ctx.getBean("person", Person.class);
       System.out.println(person)); // 출력: Person [name=홍길동, age=20, cat=Cat [name=나비]]
-
     ```
 
+<br><br><br>
 
 ## 메소드 이용 주입 SHORT CUT
 1. ### [Person/Cat 빈(bean) 생성]([SpringFramework]%20메소드%20이용%20주입.md)
