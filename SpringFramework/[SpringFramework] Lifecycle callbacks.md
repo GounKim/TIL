@@ -1,6 +1,26 @@
 # Lifecycle callbacks
 ###### https://docs.spring.io/spring-framework/docs/4.3.30.RELEASE/spring-framework-reference/html/beans.html#beans-factory-lifecycle
 
+### Callback
+빈 생성 / 빈 소멸 관련 callback 처리<br>
+  - IOC Container: 빈 관리(빈 생성 ~ 빈 소멸)
+    - 빈 생성 시 임의의 메소드 call => 추가작업 _초기화_ 진행
+    - 빈 소멸 시 임의의 메소드 call => 추가 작업 _자원 반납_ 진행
+
+<br>
+  
+3가지 방법
+  - 태그 속성(xml)
+    - init-method
+    - destroy-method
+  - 인터페이스
+    - InitializingBean
+    - DisposableBean
+  - 어노테이션
+    - @PostConstruct
+    - @PreDestroy
+    - 어노테이션 활성화 코드 지정 필수
+
 <br>
 
 ## 1. Use Method
