@@ -46,8 +46,8 @@ SW가 특정 지역이나 언어제 종속되지 않고 다양한 지역, 언어
 
 ### 방법1: main에서 주입
 1. 빈(bean) 등록
+   - **_반드시_ id를 messageSource로 설정해야지만 적용된다.**
     ```xml
-    <!-- 반드시 id를 messageSource로 설정해야지만 적용된다. -->
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basenames">
 			<list>
